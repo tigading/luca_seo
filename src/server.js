@@ -107,6 +107,7 @@ app.get('/w/:token', (req, res) => {
 });
 
 app.get('/m/:token', (req, res) => {
+	console.log(req);
 	const token = req.params?.token;
 	axios
 		.get(
