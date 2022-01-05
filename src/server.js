@@ -90,9 +90,9 @@ app.get('/w/:token', (req, res) => {
 			`https://api-beta.luca.education/api/v1/weekly_reports/show_by_token?token=${token}`
 		)
 		.then(function (response) {
-			const { data } = response.data;
+			const { data, org } = response.data;
 			const title = `Trung tâm ${
-				data?.org?.name || ''
+				org?.name || ''
 			} | Báo cáo tuần ${_TO_WEEK(data?.week_start)} năm ${_TO_YEAR(
 				data?.week_start
 			)} của bé ${data?.student?.name || ''}`;
@@ -115,9 +115,9 @@ app.get('/m/:token', (req, res) => {
 			`https://api-beta.luca.education/api/v1/monthly_reports/show_by_token?token=${token}`
 		)
 		.then(function (response) {
-			const { data } = response.data;
+			const { data, org } = response.data;
 			const title = `Trung tâm ${
-				data?.org?.name || ''
+				org?.name || ''
 			} | Báo cáo kế hoạch tháng ${_TO_MONTH(
 				data?.month_start
 			)} năm ${_TO_YEAR(data?.month_start)} của bé ${
