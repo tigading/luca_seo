@@ -78,7 +78,8 @@ app.get('/l/:token', (req, res) => {
 			res.send(response);
 		})
 		.catch(function (error) {
-			res.send('Error');
+			console.log(error);
+			res.send(error);
 		});
 });
 
@@ -102,16 +103,16 @@ app.get('/w/:token', (req, res) => {
 			res.send(response);
 		})
 		.catch(function (error) {
-			res.send('Error');
+			console.log(error);
+			res.send(error);
 		});
 });
 
 app.get('/m/:token', (req, res) => {
-	console.log(req);
 	const token = req.params?.token;
 	axios
 		.get(
-			`https://api-beta.luca.education/api/v1/lesson_reports/show_by_token?token=${token}`
+			`https://api-beta.luca.education/api/v1/monthly_reports/show_by_token?token=${token}`
 		)
 		.then(function (response) {
 			const { data } = response.data;
@@ -129,10 +130,11 @@ app.get('/m/:token', (req, res) => {
 			res.send(response);
 		})
 		.catch(function (error) {
-			res.send('Error');
+			console.log(error);
+			res.send(error);
 		});
 });
 
-app.listen(3000, () => {
+app.listen(8080, () => {
 	console.log('Server started at port 3000');
 });
