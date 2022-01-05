@@ -21,7 +21,6 @@ function _TO_WEEK(date) {
 }
 
 function _TO_MONTH(date) {
-	let dateCheck;
 	if (!date || date.toLowerCase() === 'invalid date') {
 		return null;
 	}
@@ -33,7 +32,6 @@ function _TO_MONTH(date) {
 }
 
 function _TO_YEAR(date) {
-	let dateCheck;
 	if (!date || date.toLowerCase() === 'invalid date') {
 		return null;
 	}
@@ -69,8 +67,10 @@ app.get('/l/:token', (req, res) => {
 			`https://api-beta.luca.education/api/v1/lesson_reports/show_by_token?token=${token}`
 		)
 		.then(function (response) {
-			const { data, org } = response.data;
-			const title = `Trung tâm ${org?.name} | Báo cáo buổi học của bé ${data?.student?.name}`;
+			const { data } = response.data;
+			const title = `Trung tâm ${
+				data?.org?.name || ''
+			} | Báo cáo buổi học của bé ${data?.student?.name || ''}`;
 			const description = `Ấn vào đường dẫn để xem báo cáo kết quả học tập của con`;
 			const cover = `https://drive.google.com/uc?id=1lyitXKOgB2x3WOKuPzEcIzsHP_jy1JyK`;
 			const url = `www.app-beta.luca.education`;
@@ -89,10 +89,12 @@ app.get('/w/:token', (req, res) => {
 			`https://api-beta.luca.education/api/v1/weekly_reports/show_by_token?token=${token}`
 		)
 		.then(function (response) {
-			const { data, org } = response.data;
-			const title = `Trung tâm ${org?.name} | Báo cáo tuần ${_TO_WEEK(
+			const { data } = response.data;
+			const title = `Trung tâm ${
+				data?.org?.name || ''
+			} | Báo cáo tuần ${_TO_WEEK(data?.week_start)} năm ${_TO_YEAR(
 				data?.week_start
-			)} năm ${_TO_YEAR(data?.week_start)} của bé ${data?.student?.name}`;
+			)} của bé ${data?.student?.name || ''}`;
 			const description = `Ấn vào đường dẫn để xem báo cáo kết quả học tập của con`;
 			const cover = `https://drive.google.com/uc?id=1P5_hV5jhzWAN4V3L2fgJ_4RgwfxmdzW0`;
 			const url = `www.app-beta.luca.education`;
@@ -111,13 +113,13 @@ app.get('/m/:token', (req, res) => {
 			`https://api-beta.luca.education/api/v1/lesson_reports/show_by_token?token=${token}`
 		)
 		.then(function (response) {
-			const { data, org } = response.data;
+			const { data } = response.data;
 			const title = `Trung tâm ${
-				org?.name
+				data?.org?.name || ''
 			} | Báo cáo kế hoạch tháng ${_TO_MONTH(
 				data?.month_start
 			)} năm ${_TO_YEAR(data?.month_start)} của bé ${
-				data?.student?.name
+				data?.student?.name || ''
 			}`;
 			const description = `Ấn vào đường dẫn để xem báo cáo kết quả học tập của con`;
 			const cover = `https://drive.google.com/uc?id=1P5_hV5jhzWAN4V3L2fgJ_4RgwfxmdzW0`;
