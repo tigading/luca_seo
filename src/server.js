@@ -133,6 +133,6 @@ app.get('/m/:token', (req, res) => {
 		});
 });
 
-app.listen(8888, () => {
-	console.log('Server started at port 8888');
+app.listen(3000, () => {
+	console.log('Server started at port 3000');
 });
