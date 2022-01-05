@@ -26,7 +26,7 @@ function _TO_MONTH(date) {
 	}
 	if (date) {
 		const data = date.split('-');
-		return +data[1] + 1;
+		return +data[1];
 	}
 	return new Date().getFullYear();
 }
