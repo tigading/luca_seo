@@ -74,7 +74,7 @@ app.get('/l/:token', (req, res) => {
 			const description =
 				`Nhận xét: ${data?.note}` ||
 				`Mở vào đường dẫn để xem báo cáo kết quả học tập của con`;
-			const cover = `https://drive.google.com/uc?id=1lyitXKOgB2x3WOKuPzEcIzsHP_jy1JyK`;
+			const cover = `https://app-beta.luca.education/img/cover/lesson.png`;
 			const url = `www.app-beta.luca.education`;
 			response = SEO(title, description, cover, url);
 			res.send(response);
@@ -101,7 +101,7 @@ app.get('/w/:token', (req, res) => {
 			const description =
 				`Nhận xét: ${data?.note}` ||
 				`Mở vào đường dẫn để xem báo cáo kết quả học tập của con`;
-			const cover = `https://drive.google.com/uc?id=1P5_hV5jhzWAN4V3L2fgJ_4RgwfxmdzW0`;
+			const cover = `https://app-beta.luca.education/img/cover/weekly.png`;
 			const url = `www.app-beta.luca.education`;
 			response = SEO(title, description, cover, url);
 			res.send(response);
@@ -130,7 +130,7 @@ app.get('/m/:token', (req, res) => {
 			const description =
 				`Nhận xét: ${data?.note}` ||
 				`Mở vào đường dẫn để xem báo cáo kết quả học tập của con`;
-			const cover = `https://drive.google.com/uc?id=1ZXHlpC1egyCOHZPi9nq8ZWlAcX1FKfGq`;
+			const cover = `https://app-beta.luca.education/img/cover/monthly.png`;
 			const url = `www.app-beta.luca.education`;
 			response = SEO(title, description, cover, url);
 			res.send(response);
