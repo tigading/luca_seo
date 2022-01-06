@@ -72,7 +72,7 @@ app.get('/l/:token', (req, res) => {
 				data?.org?.name || ''
 			} | Báo cáo buổi học của bé ${data?.student?.name || ''}`;
 			const description =
-				data?.note ||
+				`Nhận xét: ${data?.note}` ||
 				`Mở vào đường dẫn để xem báo cáo kết quả học tập của con`;
 			const cover = `https://drive.google.com/uc?id=1lyitXKOgB2x3WOKuPzEcIzsHP_jy1JyK`;
 			const url = `www.app-beta.luca.education`;
@@ -99,7 +99,7 @@ app.get('/w/:token', (req, res) => {
 				data?.week_start
 			)} của bé ${data?.student?.name || ''}`;
 			const description =
-				data?.note ||
+				`Nhận xét: ${data?.note}` ||
 				`Mở vào đường dẫn để xem báo cáo kết quả học tập của con`;
 			const cover = `https://drive.google.com/uc?id=1P5_hV5jhzWAN4V3L2fgJ_4RgwfxmdzW0`;
 			const url = `www.app-beta.luca.education`;
@@ -128,7 +128,7 @@ app.get('/m/:token', (req, res) => {
 				data?.student?.name || ''
 			}`;
 			const description =
-				data?.note ||
+				`Nhận xét: ${data?.note}` ||
 				`Mở vào đường dẫn để xem báo cáo kết quả học tập của con`;
 			const cover = `https://drive.google.com/uc?id=1ZXHlpC1egyCOHZPi9nq8ZWlAcX1FKfGq`;
 			const url = `www.app-beta.luca.education`;
