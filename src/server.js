@@ -124,7 +124,7 @@ app.get('/m/:token', (req, res) => {
 				data?.student?.name || ''
 			}`;
 			const description = `Ấn vào đường dẫn để xem báo cáo kết quả học tập của con`;
-			const cover = `https://drive.google.com/uc?id=1P5_hV5jhzWAN4V3L2fgJ_4RgwfxmdzW0`;
+			const cover = `https://drive.google.com/uc?id=1ZXHlpC1egyCOHZPi9nq8ZWlAcX1FKfGq`;
 			const url = `www.app-beta.luca.education`;
 			response = SEO(title, description, cover, url);
 			res.send(response);
