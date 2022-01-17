@@ -71,9 +71,9 @@ app.get('/l/:token', (req, res) => {
 			const title = `Trung tâm ${
 				data?.org?.name || ''
 			} | Báo cáo buổi học của bé ${data?.student?.name || ''}`;
-			const description =
-				`Nhận xét: ${data?.note}` ||
-				`Mở vào đường dẫn để xem báo cáo kết quả học tập của con`;
+			const description = data?.note
+				? `Nhận xét: ${data?.note}`
+				: `Mở vào đường dẫn để xem báo cáo kết quả học tập của con`;
 			const cover = `https://drive.google.com/uc?id=19qCl3ZGlenWONISmHLy-6I63bAPP7iAs`;
 			const url = `www.app-beta.luca.education`;
 			response = SEO(title, description, cover, url);
@@ -98,9 +98,9 @@ app.get('/w/:token', (req, res) => {
 			} | Báo cáo tuần ${_TO_WEEK(data?.week_start)} năm ${_TO_YEAR(
 				data?.week_start
 			)} của bé ${data?.student?.name || ''}`;
-			const description =
-				`Nhận xét: ${data?.note}` ||
-				`Mở vào đường dẫn để xem báo cáo kết quả học tập của con`;
+			const description = data?.note
+				? `Nhận xét: ${data?.note}`
+				: `Mở vào đường dẫn để xem báo cáo kết quả học tập của con`;
 			const cover = `https://drive.google.com/uc?id=1ps2sn5oKPH-X3jONN5mFPInVTNDRdb7f`;
 			const url = `www.app-beta.luca.education`;
 			response = SEO(title, description, cover, url);
@@ -127,9 +127,9 @@ app.get('/m/:token', (req, res) => {
 			)} năm ${_TO_YEAR(data?.month_start)} của bé ${
 				data?.student?.name || ''
 			}`;
-			const description =
-				`Nhận xét: ${data?.note}` ||
-				`Mở vào đường dẫn để xem báo cáo kết quả học tập của con`;
+			const description = data?.note
+				? `Nhận xét: ${data?.note}`
+				: `Mở vào đường dẫn để xem báo cáo kết quả học tập của con`;
 			const cover = `https://drive.google.com/uc?id=17YRWqNrSJ4rJLQh0Cq8vVGpqyaikZACe`;
 			const url = `www.app-beta.luca.education`;
 			response = SEO(title, description, cover, url);
